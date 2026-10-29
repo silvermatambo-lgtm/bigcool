@@ -1,0 +1,71 @@
+/* Bigcool · UltraMax 7 Pro Premium Motion Restoration v8 */
+:root{--bc-motion-ease:cubic-bezier(.16,1,.3,1);--bc-ice:#67dfff}
+@keyframes bc-zoom-pan{0%{transform:scale(1.015) translate3d(0,0,0)}50%{transform:scale(1.08) translate3d(0,-1.2%,0)}100%{transform:scale(1.015) translate3d(0,0,0)}}
+@keyframes bc-shimmer{0%{transform:translateX(-220%) skewX(-20deg)}100%{transform:translateX(520%) skewX(-20deg)}}
+@keyframes bc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes bc-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes bc-glow{0%,100%{box-shadow:0 9px 27px #159bce33}50%{box-shadow:0 10px 34px #159bce85}}
+@keyframes bc-accent{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bc-hero .hero-bg.active{animation:bc-zoom-pan 18s ease-in-out infinite alternate;will-change:transform}
+.bc-hero .hero-content{position:relative;z-index:2}
+.bc-hero .eyebrow,.inner-hero .kicker{border-radius:999px;border:1px solid #aae7ff66;padding:9px 16px;background:#147da328;backdrop-filter:blur(6px)}
+.bc-hero .slide-controls button{transition:transform .3s,background .3s,box-shadow .3s}
+.bc-hero .slide-controls button:hover{transform:scale(1.13);background:#159bce;box-shadow:0 7px 25px #15aece80}
+.bc-hero .hero-ctas .btn:first-child,.bc-cta-actions .btn:first-child{animation:bc-glow 3.1s ease-in-out infinite}
+.bc-hero .btn,.bc-cta .btn{position:relative;overflow:hidden}
+.bc-hero .btn:before,.bc-cta .btn:before{content:"";position:absolute;inset:-65% auto -65% -55%;width:21%;pointer-events:none;background:linear-gradient(90deg,transparent,#ffffff92,transparent);transform:skewX(-20deg);transition:left .8s}
+.bc-hero .btn:hover:before,.bc-cta .btn:hover:before{left:130%}
+.bc-trust-strip{position:relative;overflow:hidden}
+.bc-trust-strip:after{content:"";position:absolute;top:0;bottom:0;left:-45%;width:25%;background:linear-gradient(90deg,transparent,#ffffff90,transparent);animation:bc-shimmer 9s linear infinite;pointer-events:none}
+.section-head h2:after,.bc-copy h2:after{content:"";display:block;width:80px;height:4px;margin-top:19px;border-radius:10px;background:linear-gradient(90deg,#0698cb,#8ae9ff);transform-origin:left;animation:bc-accent 1.3s var(--bc-motion-ease) both}
+.bc-dark .section-head h2:after{background:linear-gradient(90deg,#69e5ff,#1975bb)}
+.bc-image-card,.bc-photo-tile,.bc-service,.bc-value-grid>*{transition:transform .6s var(--bc-motion-ease),box-shadow .5s,filter .45s}
+.bc-image-card:hover,.bc-photo-tile:hover,.bc-service:hover,.bc-value-grid>*:hover{transform:translateY(-9px);box-shadow:0 26px 58px #02547740}
+.bc-image-card img,.bc-photo-tile img,.bc-service>img{transition:transform .9s var(--bc-motion-ease),filter .5s}
+.bc-image-card:hover img,.bc-photo-tile:hover img,.bc-service:hover>img{transform:scale(1.09);filter:saturate(1.2)}
+.bc-photo-stack .bc-small-photo{animation:bc-float 6s ease-in-out infinite}
+.flip-card .flip-inner{transition:transform .95s var(--bc-motion-ease)}
+.flip-card .front:before{content:"";position:absolute;inset:auto -30% -85%;height:100%;background:radial-gradient(ellipse,#40bde65a,transparent 70%);pointer-events:none;transition:transform .5s}
+.flip-card:hover .front:before{transform:translateY(-24px)}
+@media (hover:hover) and (pointer:fine){.flip-card:is(:hover,:focus-visible) .flip-inner{transform:rotateY(180deg)}}
+.flip-card:focus-visible{outline:3px solid #29caff;outline-offset:5px}
+.bc-motion{opacity:1}
+html.bc-motion-ready .bc-motion:not(.bc-motion-visible){opacity:0;transform:translateY(55px);filter:blur(5px)}
+html.bc-motion-ready .bc-motion.bc-left:not(.bc-motion-visible){transform:translateX(-65px)}
+html.bc-motion-ready .bc-motion.bc-right:not(.bc-motion-visible){transform:translateX(65px)}
+html.bc-motion-ready .bc-motion.bc-zoom:not(.bc-motion-visible){transform:scale(.9)}
+html.bc-motion-ready .bc-motion.bc-rotate:not(.bc-motion-visible){transform:rotate(-4deg) scale(.94)}
+html.bc-motion-ready .bc-motion{transition:opacity .9s var(--bc-motion-ease) var(--bc-delay,0ms),transform 1.1s var(--bc-motion-ease) var(--bc-delay,0ms),filter 1.1s var(--bc-motion-ease) var(--bc-delay,0ms)}
+html.bc-motion-ready .bc-motion.bc-motion-visible{opacity:1;transform:none;filter:none}
+.bc-scroll-ticker{overflow:hidden;background:#073450;color:#e2f8ff;padding:14px 0;border-top:1px solid #2a9eb75c;border-bottom:1px solid #2a9eb75c}
+.bc-scroll-ticker-track{display:flex;gap:55px;width:max-content;white-space:nowrap;animation:bc-ticker 30s linear infinite}
+.bc-scroll-ticker-track span{font-size:.83rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.bc-scroll-ticker-track span:before{content:"✳";color:#7be7ff;margin-right:13px}
+.bc-scroll-ticker:hover .bc-scroll-ticker-track{animation-play-state:paused}
+.bc-effect-area{position:relative;overflow:hidden;background:linear-gradient(155deg,#edf8fd,#fff)}
+.bc-effect-area:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 0% 0%,#7ed5f72e,transparent 46%),radial-gradient(circle at 95% 95%,#199fd52b,transparent 50%)}
+.bc-effect-head{max-width:860px;margin:0 auto 43px;text-align:center;position:relative}
+.bc-effect-head .kicker{display:block;margin-bottom:10px}
+.bc-effect-head h2{font-size:clamp(2rem,4vw,3.7rem);color:#0c3450;margin:0 0 16px}
+.bc-effect-head p{color:#51718a;line-height:1.7;font-size:1.03rem}
+.bc-effect-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.bc-effect-flip{height:345px;perspective:1200px;background:transparent;border:0;padding:0;text-align:left;cursor:pointer;color:#fff}
+.bc-effect-flip-inner{display:block;width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 1s var(--bc-motion-ease);border-radius:20px;box-shadow:0 20px 45px #072f4b35}
+.bc-effect-flip.flipped .bc-effect-flip-inner{transform:rotateY(180deg)}
+.bc-effect-face{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;border-radius:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.bc-effect-face.front{background:#082f4c}
+.bc-effect-face.front img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--bc-motion-ease)}
+.bc-effect-face.front:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,#02253ceb)}
+.bc-effect-copy{position:relative;z-index:2;padding:26px}
+.bc-effect-copy small{display:block;color:#9ce8ff;font-weight:850;letter-spacing:.14em;margin-bottom:13px;font-size:.75rem}
+.bc-effect-copy strong{display:block;font-size:clamp(1.5rem,2vw,1.9rem);line-height:1.15}
+.bc-effect-copy em{display:block;font-size:.85rem;font-style:normal;color:#dbf5ff;margin-top:17px}
+.bc-effect-face.back{transform:rotateY(180deg);background:linear-gradient(145deg,#082c4c,#087da8);justify-content:center;align-items:flex-start;padding:30px}
+.bc-effect-face.back strong{font-size:1.7rem;line-height:1.15}
+.bc-effect-face.back p{line-height:1.7;color:#def5ff}
+.bc-effect-face.back span{font-size:.95rem;font-weight:750;color:#93ecff}
+.bc-effect-flip:focus-visible{outline:3px solid #28c6ee;outline-offset:6px;border-radius:20px}
+@media(hover:hover) and (pointer:fine){.bc-effect-flip:hover .bc-effect-flip-inner,.bc-effect-flip:focus-visible .bc-effect-flip-inner{transform:rotateY(180deg)}.bc-effect-flip:hover .front img{transform:scale(1.12)}}
+@media(max-width:930px){.bc-effect-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.bc-effect-grid{grid-template-columns:1fr;gap:18px}.bc-effect-flip{height:300px}.bc-effect-head h2{font-size:2rem}.bc-effect-face.back{padding:24px}}
+@media(prefers-reduced-motion:reduce){.bc-hero .hero-bg.active,.bc-hero .hero-ctas .btn:first-child,.bc-cta-actions .btn:first-child,.bc-trust-strip:after,.bc-photo-stack .bc-small-photo,.bc-scroll-ticker-track{animation:none!important}html.bc-motion-ready .bc-motion,.bc-motion{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.flip-card .flip-inner,.bc-effect-flip-inner{transition:none!important}.bc-image-card img,.bc-photo-tile img,.bc-service>img{transition:none!important}}
